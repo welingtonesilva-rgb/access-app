@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini AccessApp - Inclusão e Inteligência</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="accessibility-bar" aria-label="Ferramentas de Acessibilidade">
+        <div class="nav-container">
+            <span class="logo"><i class="fa-solid fa-brain"></i> Gemini<span>Access</span></span>
+            <div class="acc-buttons">
+                <button id="btn-decrease" title="Diminuir texto" aria-label="Diminuir tamanho do texto">A-</button>
+                <button id="btn-increase" title="Aumentar texto" aria-label="Aumentar tamanho do texto">A+</button>
+                <button id="btn-tts" title="Ouvir página" aria-label="Ler texto em voz alta"><i class="fa-solid fa-volume-high"></i> Ler Tela</button>
+                <button id="btn-help" title="Ajuda" aria-label="Abrir modal de ajuda"><i class="fa-solid fa-question-circle"></i> Ajuda</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="app-container">
+        <section class="chat-card">
+            <h2><i class="fa-solid fa-comments"></i> Assistente IA Acessível</h2>
+            <p class="subtitle">Digite sua dúvida abaixo para interagir com o Gemini de forma simples e inclusiva.</p>
+            
+            <div id="chat-output" class="chat-output" aria-live="polite">
+                <div class="message system-message">
+                    <p>Olá! Eu sou o assistente interativo. Como posso te ajudar hoje?</p>
+                </div>
+            </div>
+
+            <form id="gemini-form" class="chat-form">
+                <label for="user-input" class="sr-only">Digite sua mensagem para o Gemini</label>
+                <textarea id="user-input" placeholder="Pergunte algo ao Gemini... (Ex: Me explique o que é acessibilidade web)" required></textarea>
+                <button type="submit" id="btn-send"><i class="fa-solid fa-paper-plane"></i> Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <div class="footer-content">
+            <h3><i class="fa-solid fa-shield-halved"></i> Direitos Digitais & Privacidade</h3>
+            <p>Este aplicativo foi desenvolvido sob os princípios do **Design Inclusivo** e **HCI (Interação Humano-Computador)**. Em conformidade com as diretrizes de Direitos Digitais e proteção de dados:</p>
+            <ul>
+                <li><i class="fa-solid fa-check"></i> <strong>Transparência:</strong> Seus dados de entrada são processados pela API do Gemini apenas para gerar a resposta e não são armazenados por nós.</li>
+                <li><i class="fa-solid fa-check"></i> <strong>Acessibilidade Universal:</strong> Interface projetada para ser operável por teclados e leitores de tela (padrões WCAG).</li>
+                <li><i class="fa-solid fa-check"></i> <strong>Ética em IA:</strong> Promovemos o uso consciente da tecnologia para a inclusão social e mitigação de vieses.</li>
+            </ul>
+            <p class="copyright">&copy; 2026 - Projeto Desenvolvendo Apps com Gemini. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="help-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+        <div class="modal-content">
+            <button id="close-modal" class="close-button" aria-label="Fechar modal">&times;</button>
+            <h2 id="modal-title"><i class="fa-solid fa-circle-info"></i> Como usar o aplicativo?</h2>
+            <hr>
+            <ol>
+                <li><strong>Interagir com a IA:</strong> Digite qualquer pergunta na caixa de texto central e clique em "Enviar". A resposta aparecerá na tela.</li>
+                <li><strong>Controle de Texto (A+/A-):</strong> Use os botões no topo para aumentar ou diminuir as letras se tiver dificuldade de leitura.</li>
+                <li><strong>Leitura em Voz Alta:</strong> Clique em "Ler Tela" para escutar o último conteúdo gerado pelo assistente.</li>
+            </ol>
+            <p class="modal-footer-text">Este modal foi implementado para garantir que qualquer usuário compreenda a interface perfeitamente (Princípio de Usabilidade de HCI).</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
